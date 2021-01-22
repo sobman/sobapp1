@@ -6,7 +6,7 @@ function getUsers(e){
     console.log('get users')
 
     fetch('/get-users')
-    .then(r=>r.json())
+    .then(r=>r.arrayBuffer())
     .then(data=>{
         console.log('then')
         renderUsers(data)
