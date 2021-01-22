@@ -1,20 +1,25 @@
-const express=require('express')
-const app=express();
-const port=process.env.PORT ||3000;
-app.use(express.static('public'))
+const express = require('express');
+const app = express();
 
 
-const users=[
-    {user:'sobhe'},
-    {user:'ahmed'},
-    {user:'jhon'}
+app.use(express.static('public'));
+
+const users = [
+  {name:'Kilani', id:'222222222'},
+  {name:'Yara', id:'333333333'},
+  {name:'Ihab', id:'444444'}
 ]
 
-app.get('/getusers',(req,res)=>{
-    res.send(users);
+//route
+app.get('/get-users',(req, res)=>{
+  res.send(users)
 })
 
 
-app.listen(port,function(){
-    console.log("listen")
+
+
+const port = process.env.PORT || 3000;
+
+app.listen(port, function () {
+  console.log('listening', port)
 })
